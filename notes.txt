@@ -71,6 +71,16 @@
             service.addJob(jobPost);
         }
 
+*   To update/delete data, @PutMapping and @DeleteMapping annotations are used respectively. 
+    So while I was deleting the data from the Arraylist in the repo class, I had used foreach loop. So the data got deleted yet I was getting error
+    because deleting the data inside the foreach loop is not allowed in Java. Therefore, I used the "removeIf" method of ArrayList. 
+    Eg.:
+    public void deleteJob(int postId) {
+    jobs.removeIf(job -> job.getPostId() == postId); // ✅ Safe and clean
+    }
+ 
+           
+
 
 
 
