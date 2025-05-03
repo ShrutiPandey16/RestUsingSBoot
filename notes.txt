@@ -64,6 +64,13 @@
             return service.getJob(postId);
         }
 
+*   To send data (like a new JobPost) from the frontend (React) to the backend (Spring Boot), use @PostMapping with @RequestBody.   
+        Eg:
+        @PostMapping("jobPost")
+        public void postJob(@RequestBody JobPost jobPost) {
+            service.addJob(jobPost);
+        }
+
 
 
 
