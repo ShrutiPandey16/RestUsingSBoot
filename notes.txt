@@ -11,6 +11,36 @@
         npm i json-server
     2. run server
         json-server --watch db.json --port 8080  
-    2. install all the packages
+    3. install all the packages
         npm i
+    4. start react
+        npm start
+
+*   By default, @Controller annotation is used to return views(like jsp pages).
+    To return raw data(json, xml etc.), there are 2 options:
+        1. use @ResponseBody + @Controller annotation
+            
+            @Controller
+            public class MyController {
+
+                @GetMapping("/data")
+                @ResponseBody
+                public String getData() {
+                    return "Hello, this is raw data";
+                }
+            }
+
+        2. use @RestController annotation with the class
+            @RestController
+            public class MyRestController {
+
+                @GetMapping("/data")
+                public String getData() {
+                    return "Hello, this is raw data";
+                }
+            }
+
+            @RestController = @Controller + @ResponseBody
+    Use @RestController when creating REST APIs, and @Controller when returning views like JSPs or Thymeleaf templates.
+
         

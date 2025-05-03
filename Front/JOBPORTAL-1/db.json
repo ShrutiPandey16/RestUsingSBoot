@@ -32,6 +32,17 @@
         "Js",
         "Ts"
       ]
+    },
+    {
+      "id": 4,
+      "postProfile":"Js Developer",
+      "postDesc":"should be good",
+      "reqExperience":5,
+      "postTechStack":[
+        "Java",
+        "Js",
+        "Ts"
+      ]
     }
   ]
 
