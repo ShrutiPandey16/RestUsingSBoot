@@ -43,4 +43,23 @@
             @RestController = @Controller + @ResponseBody
     Use @RestController when creating REST APIs, and @Controller when returning views like JSPs or Thymeleaf templates.
 
+*   Since React (running on port 3000) and Spring Boot (on port 8080) are different origins, the browser blocks their communication due to Cross-Origin Resource Sharing (CORS) policy.
+    To enable communication, follow these two steps:
+    1. Frontend (React) – Call the Backend API
+       In components.jsx (or similar React file), use axios or fetch to call your backend:
+        const response = await axios.get("http://localhost:8080/jobPosts");
+    2. Backend (Spring Boot) – Enable CORS
+       In your @RestController class, allow requests from the React app using @CrossOrigin:    
+        @RestController
+        @CrossOrigin(origins = "http://localhost:3000")
+        public class JobRestController {
+            // Your endpoint methods
+        }
+        ✅ This tells Spring Boot to allow requests from your React app’s origin.
+
+
+
+
+
+
         
