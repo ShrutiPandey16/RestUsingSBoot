@@ -78,6 +78,9 @@
     public void deleteJob(int postId) {
     jobs.removeIf(job -> job.getPostId() == postId); // ✅ Safe and clean
     }
+
+*   Content Negotiation can be achieved by adding jackson xml dependency on pom.xml and using it. Further, to restrict the body type to only json, producer and consumer 
+    specification can be used.    
  
            
 
