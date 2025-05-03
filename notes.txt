@@ -1,0 +1,16 @@
+*   Stateless -> communication method in which the server completes every client request independently of all previous requests.
+
+*   REST -> Representation State Transfer
+        R -> In a proper format(e.g. json, xml etc) Representation of a resource not the resource itself.
+        S -> Current condition or data of the resource at an instance. REST is stateless.
+        T -> The state is transferred from the server to the client via HTTP methods (GET, POST, etc.).
+
+*   REST uses Noun rather than Verb. Eg. .../addAJob -> .../job
+
+*   1. start the server, we can create pseudo server by installing json-server    
+        npm i json-server
+    2. run server
+        json-server --watch db.json --port 8080  
+    2. install all the packages
+        npm i
+        
