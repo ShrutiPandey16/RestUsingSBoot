@@ -57,6 +57,13 @@
         }
         ✅ This tells Spring Boot to allow requests from your React app’s origin.
 
+*   To fetch specific data (e.g., a job post with postId = 2), use path variables in the URL and the @PathVariable annotation in your Spring Boot controller.   
+    Eg. : 
+        @GetMapping("jobPosts/{postId}")
+        public JobPost getJob(@PathVariable("postId") int postId) {
+            return service.getJob(postId);
+        }
+
 
 
 
