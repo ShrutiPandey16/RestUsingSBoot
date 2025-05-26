@@ -1,7 +1,7 @@
 *   Stateless -> communication method in which the server completes every client request independently of all previous requests.
 
 *   REST -> Representation State Transfer
-        R -> In a proper format(e.g. json, xml etc) Representation of a resource not the resource itself.
+        R -> Representation of resource in a proper format(e.g. json, xml etc) Representation of a resource not the resource itself.
         S -> Current condition or data of the resource at an instance. REST is stateless.
         T -> The state is transferred from the server to the client via HTTP methods (GET, POST, etc.).
 
@@ -24,14 +24,14 @@
             public class MyController {
 
                 @GetMapping("/data")
-                @ResponseBody
+                @ResponseBody       -> this annotation tells spring that this method will return data and not views
                 public String getData() {
                     return "Hello, this is raw data";
                 }
             }
 
         2. use @RestController annotation with the class
-            @RestController
+            @RestController    
             public class MyRestController {
 
                 @GetMapping("/data")
@@ -81,7 +81,13 @@
 
 *   Content Negotiation can be achieved by adding jackson xml dependency on pom.xml and using it. Further, to restrict the body type to only json, producer and consumer 
     specification can be used.    
- 
+
+*   After learning JPA, instead of adding datas in ArrayList, we can add those in DB. So :
+    S1: change Repo from class to interface.
+    S2: make Repo interface extends JpaRepo and pass JobPost(POJO class) and integer as params
+    S3: update .properties file with the necessary detail of postgres.
+    S4: update methods in service class
+    S5: run
            
 
 
