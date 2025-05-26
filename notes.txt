@@ -89,6 +89,10 @@
     S4: update .properties file with the necessary detail of postgres.
     S5: update methods in service class
     S6: run
+
+*   We can combine property name, conjuction to form a method name from which JPA internally uses DSL to turn it into a query.
+    E.g.: List<JobPost> findByPostProfileContainingOrPostDescContaining(String PostProfile, String PostDesc);
+     
            
 
 

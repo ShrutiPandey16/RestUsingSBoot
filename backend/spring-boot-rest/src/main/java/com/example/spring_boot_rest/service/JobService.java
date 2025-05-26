@@ -48,4 +48,9 @@ public class JobService {
 		repo.saveAll(jobs);
 	}
 
+	public List<JobPost> search(String keyword) {
+		// TODO Auto-generated method stub
+		return repo.findByPostProfileContainingOrPostDescContaining(keyword, keyword);
+	}
+
 }
